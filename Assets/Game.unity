@@ -220,7 +220,12 @@ Prefab:
     - target: {fileID: 114891472723629952, guid: c3542c162a0c8c2499299db3905730c6,
         type: 2}
       propertyPath: m_MovePower
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114891472723629952, guid: c3542c162a0c8c2499299db3905730c6,
+        type: 2}
+      propertyPath: m_JumpPower
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3542c162a0c8c2499299db3905730c6, type: 2}
