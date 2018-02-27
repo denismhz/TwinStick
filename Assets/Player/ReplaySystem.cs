@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReplaySystem : MonoBehaviour {
 
-    private const int bufferFrames = 1000;
+    private const int bufferFrames = 100;
     private MyKeyFrame[] keyFrames = new MyKeyFrame[bufferFrames];
     private Rigidbody rigidBody;
     private GameManager gameManager;
@@ -31,7 +31,7 @@ public class ReplaySystem : MonoBehaviour {
     {
         rigidBody.isKinematic = true;
         int frame = Time.frameCount % bufferFrames;
-        Debug.Log("Reading frame: " + frame);
+        //Debug.Log("Reading frame: " + frame);
         transform.position = keyFrames[frame].position;
         transform.rotation = keyFrames[frame].rotation;
     }
@@ -41,7 +41,7 @@ public class ReplaySystem : MonoBehaviour {
         rigidBody.isKinematic = false;
         int frame = Time.frameCount % bufferFrames;
         float time = Time.time;
-        Debug.Log("Writing frame: " + frame);
+        //Debug.Log("Writing frame: " + frame);
 
         keyFrames[frame] = new MyKeyFrame(time, transform.position, transform.rotation);
     }

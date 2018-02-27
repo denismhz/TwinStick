@@ -6,10 +6,10 @@ using UnityStandardAssets.CrossPlatformInput;
 public class GameManager : MonoBehaviour {
 
     public bool recording = true;
-
+    private float fixedDeltaTime;
 	// Use this for initialization
 	void Start () {
-		
+        fixedDeltaTime = Time.fixedDeltaTime;
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,17 @@ public class GameManager : MonoBehaviour {
         } else
         {
             recording = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 0;
+            Time.fixedDeltaTime = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = fixedDeltaTime;
         }
 	}
 }
